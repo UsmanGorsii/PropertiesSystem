@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>{{ title }}</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App Icons -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}">
+
+        <!--Morris Chart CSS -->
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/morris/morris.css') }}">
+
+        <!-- App css -->
+
+
+        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+        <!-- DataTables -->
+
+        <link href="{{ url_for('static', filename='plugins/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='plugins/datatables/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <!-- Responsive datatable examples -->
+        <link href="{{ url_for('static', filename='plugins/datatables/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
+
+        <!-- Plugins css -->
+
+        <link href="{{ url_for('static', filename='plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" />
+
+        <!-- App css -->
+        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+
+    <body>
+
+        <!-- Loader -->
+        <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+        <div class="header-bg">
+            <!-- Navigation Bar-->
+            <header id="topnav">
+
+                <!-- MENU Start -->
+                <div class="navbar-custom">
+                    <div class="container-fluid">
+                        <!-- Logo-->
+                        <div class="d-none d-lg-block">
+                            <!-- Text Logo
+                            <a href="index.html" class="logo">
+                                Foxia
+                            </a>
+                             -->
+                            <!-- Image Logo -->
+                             <a href="tableDetails" class="logo">
+                                <img src="{{ url_for('static', filename='assets/images/logo-sm.png') }}" alt="" height="22" class="logo-small">
+                                 <!--<img src="static/assets/images/logo.png" alt="" height="20" class="logo-large">-->
+                            </a>
+
+                        </div>
+                        <!-- End Logo-->
+                        <div id="navigation">
+
+                            <!-- Navigation Menu-->
+                            <ul class="navigation-menu">
+
+                                <li class="has-submenu">
+                                    <a href="tableDetails"><i class="dripicons-meter"></i>Dashboard</a>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="logout"><i></i>Logout</a>
+                                </li>
+                            </ul>
+                            <!-- End navigation menu -->
+                        </div> <!-- end #navigation -->
+                    </div> <!-- end container -->
+
+                </div> <!-- end navbar-custom -->
+            </header>
+
+
+        {% block content %}{% endblock %}
+
+        <!-- jQuery  -->
+        <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/modernizr.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/waves.js') }}"></script>
+        <script src="{{ url_for('static', filename='assets/js/jquery.slimscroll.js') }}"></script>
+
+        <script src="{{ url_for('static', filename='plugins/peity-chart/jquery.peity.min.js') }}"></script>
+
+        <!--Morris Chart-->
+        <script src="{{ url_for('static', filename='plugins/morris/morris.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/raphael/raphael-min.js') }}"></script>
+
+        <script src="{{ url_for('static', filename='assets/pages/dashboard.js') }}"></script>
+        <!-- App js -->
+        <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+        <!-- Required datatable js -->
+        <script src="{{ url_for('static', filename='plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+        <!-- Buttons examples -->
+        <script src="{{ url_for('static', filename='plugins/datatables/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/buttons.bootstrap4.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/jszip.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/pdfmake.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/vfs_fonts.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/buttons.html5.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/buttons.print.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/buttons.colVis.min.js') }}"></script>
+        <!-- Responsive examples -->
+        <script src="{{ url_for('static', filename='plugins/datatables/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/datatables/responsive.bootstrap4.min.js') }}"></script>
+
+        <!-- Datatable init js -->
+        <script src="{{ url_for('static', filename='assets/pages/datatables.init.js') }}"></script>
+
+        <!-- App js -->
+        <script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+
+        <!-- Plugins js -->
+        <script src="{{ url_for('static', filename='plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/select2/js/select2.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js') }}"></script>
+
+        <!-- Plugins Init js -->
+        <script src="{{ url_for('static', filename='assets/pages/form-advanced.js') }}"></script>
+
+    </body>
+</html>

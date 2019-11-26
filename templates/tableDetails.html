@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+<div class="content-page">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h4 class="page-title mb-0">Properties Table</h4>
+                                <ol class="breadcrumb m-0">
+                                    <!--<li class="breadcrumb-item active" aria-current="page"> 52 Weeks Range </li> -->
+                                </ol>
+                            </div>
+                        
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <form method="POST" enctype="multipart/form-data">
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Brokerage</label>
+                                                    <select class="select2 form-control select2-multiple" multiple="multiple" name="brokerage" data-placeholder="Choose ...">
+                                                        <option value=""></option>
+                                                        {% for brokerage in brokerage_list %}
+                                                        <option>{{ brokerage }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Listing Status</label>
+                                                    <select class="select2 form-control select2-multiple" multiple="multiple" name="listing_status" data-placeholder="Choose ...">
+                                                        <option value=""></option>
+                                                        <option>SOLD</option>
+                                                        <option>FOR SALE</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Listing Category</label>
+                                                    <select class="select2 form-control select2-multiple" multiple="multiple" name="listing_category" data-placeholder="Choose ...">
+                                                        <option value=""></option>
+                                                        <option>Houses</option>
+                                                        <option>Apartments</option>
+                                                        <option>Land</option>
+                                                        <option>Commercial</option>
+                                                        <option>Farms</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Price</label>
+                                                    <div class="input-range input-group">
+                                                        <input name="minPrice" class="form-control" type="number" min="0" placeholder="Min Price"/>
+                                                        <input name="maxPrice" class="form-control" type="number" min="0" placeholder="Max Price"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="p-10">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Bedrooms</label>
+                                                    <div class="input-range input-group">
+                                                        <input name="minBedrooms" class="form-control" type="number" min="0" placeholder="Min Bedrooms"/>
+                                                        <input name="maxBedrooms" class="form-control" type="number" min="0" placeholder="Max Bedrooms"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <label>Bathrooms</label>
+                                                    <div class="input-range input-group">
+                                                        <input name="minBathrooms" class="form-control" type="number" min="0" placeholder="Min Bathrooms"/>
+                                                        <input name="maxBathrooms" class="form-control" type="number" min="0" placeholder="Max Bathrooms"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="p-1">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    <div class="text-center m-t-15">
+                                                        <div style="padding:15px">
+                                                        <button type="submit" class="btn btn-primary waves-effect waves-light">Update Tables</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                <tr>
+                                    <th>Brokerage</th>
+                                    <th>listing Title</th>
+                                    <th>Listing Status</th>
+                                    <th>Listing Category</th>
+                                    <th>Price</th>
+                                    <th>Bedrooms</th>
+                                    <th>Bathrooms</th>
+                                    <th>Property Link</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for data in tableData %}
+                                    <tr>
+                                        <td>{{ data["brokerage"] }}</td>
+                                        <td>{{ data["listing_title"] }}</td>
+                                        <td>{{ data["listing_status"] }}</td>
+                                        <td>{{ data["listing_category"] }}</td>
+                                        <td>{{ data["price"] }}</td>
+                                        <td>{{ data["bedrooms"] }}</td>
+                                        <td>{{ data["bathrooms"] }}</td>
+                                        <td>{{ data["url"] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+
+        </div> <!-- container-fluid -->
+    </div> <!-- content -->
+</div>
+</body>
+{% endblock %}
